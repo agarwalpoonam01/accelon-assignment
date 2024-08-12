@@ -13,7 +13,7 @@ pipeline {
             }
         }
         stage('Terraform Init') {
-            steps {'accelon-assignment/terraform-ecs/terraform') {  // Replace with the correct subdirectory if needed
+            steps {'accelon-assignment/terraform') {  // Replace with the correct subdirectory if needed
                     sh 'terraform init'
                 }
             }
