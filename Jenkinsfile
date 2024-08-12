@@ -13,22 +13,21 @@ pipeline {
             }
         }
         stage('Terraform Init') {
-            steps {
-                dir('terraform-ecs/terraform') {  // Replace with the correct subdirectory if needed
+            steps {'accelon-assignment/terraform-ecs/terraform') {  // Replace with the correct subdirectory if needed
                     sh 'terraform init'
                 }
             }
         }
         stage('Terraform Plan') {
             steps {
-                dir('terraform-ecs/terraform') {  // Replace with the correct subdirectory if needed
+                dir('accelon-assignment/terraform') {  // Replace with the correct subdirectory if needed
                     sh 'terraform plan'
                 }
             }
         }
         stage('Terraform Apply') {
             steps {
-                dir('terraform-ecs/terraform') {  // Replace with the correct subdirectory if needed
+                dir('accelon-assignment/terraform') {  // Replace with the correct subdirectory if needed
                     sh 'terraform apply -auto-approve'
                 }
             }
