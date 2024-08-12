@@ -2,31 +2,36 @@ pipeline {
     agent any
 
     environment {
-        AWS_DEFAULT_REGION = 'ap-south-a'  // Replace with your region
+        AWS_DEFAULT_REGION = 'ap-south-1'  // Replace with your region
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/agarwalpoonam01/accelon-assignment.git'  // Replace with your repo URL
+                git branch: 'main', url: 'https://github.com/your-repo/terraform-ecs.git'  // Replace with your repo URL
+                sh 'ls -la'  // Check that the files are present
             }
         }
         stage('Terraform Init') {
             steps {
-                sh 'cd accelon-assignment'
-                sh 'terraform init'
+                dir('terraform-ecs') {  // Replace with the correct subdirectory if needed
+                    sh 'terraform init'
+                }
             }
         }
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan'
+                dir('terraform-ecs') {  // Replace with the correct subdirectory if needed
+                    sh 'terraform plan'
+                }
             }
         }
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply -auto-approve'
+                dir('terraform-ecs') {  // Replace with the correct subdirectory if needed
+                    sh 'terraform apply -auto-approve'
+                }
             }
         }
     }
 }
-
