@@ -13,6 +13,7 @@ pipeline {
         }
         stage('Terraform Init') {
             steps {
+                sh 'cd accelon-assignment'
                 sh 'terraform init'
             }
         }
