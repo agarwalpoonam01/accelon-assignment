@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repo/terraform-ecs.git'  // Replace with your repo URL
+                git branch: 'main', url: 'https://github.com/agarwalpoonam01/accelon-assignment.git'  // Replace with your repo URL
                 sh 'ls -la'  // Check that the files are present
             }
         }
